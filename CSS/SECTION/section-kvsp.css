@@ -1,0 +1,70 @@
+/*? KVSP ============================================================= KVSP ?*/
+/* structure ----------------------------------------------------- structure */
+#mlc-kvsp {
+    width: 100%;
+    height: auto;
+
+    gap: var(--gp-btwn-global);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 5px;
+    padding: clamp(15px, 4.5vw, 30px);
+
+    background-color: var(--clr-trtiary);
+    box-shadow: 0px 2.5px 12.5px 0px var(--clr-bckgrnd-shdw);
+
+    max-width: 550px;
+    @media (width > 1100px) { max-width: 425px; }
+}
+
+#mlc-kvsp-image {
+    position: relative;
+
+    width: 100%;
+    height: clamp(200px, 55vw, 300px);
+
+    border-radius: 5px;
+
+    outline-offset: clamp(3px, .5vw, 6px);
+    outline: solid clamp(2px, .13vw, 3px) var(--clr-primary);
+
+    background-size: cover;
+    background-position-y: 40%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-image: url(../../IMAGE/kvsp.webp);
+
+    box-shadow: 0px 2.5px 12.5px 0px var(--clr-bckgrnd-shdw);
+    @media (width > 1100px) { height: clamp(350px, 31vw, 425px); }
+}
+
+#mlc-kvsp-image::after {
+    position: absolute;
+    top: clamp(10px, 3vw, 15px);
+    right: clamp(10px, 3vw, 15px);
+    content: '';
+
+    width: clamp(20px, 5vw, 30px);
+    aspect-ratio: 1;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../IMAGE/link.svg);
+    filter: drop-shadow(0px 2.5px 12.5px rgba(0, 0, 0, .5));
+}
+
+#mlc-kvsp-title {
+    width: auto;
+    height: auto;
+
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 1px;
+
+    font-size: var(--fs-h4);
+    color: var(--clr-txt-w);
+}

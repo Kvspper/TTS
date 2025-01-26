@@ -1,0 +1,101 @@
+/*? GALR ============================================================= GALR ?*/
+/* structure ----------------------------------------------------- structure */
+#mrc-galr-content {
+    width: 100%;
+    height: auto;
+
+    gap: var(--gp-btwn-global);
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mrc-galr-elmt-1::before {background-image: url(../../IMAGE/GALR/glry-img-1.webp);}
+.mrc-galr-elmt-2::before {background-image: url(../../IMAGE/GALR/glry-img-2.webp);}
+.mrc-galr-elmt-3::before {background-image: url(../../IMAGE/GALR/glry-img-3.webp);}
+.mrc-galr-elmt-4::before {background-image: url(../../IMAGE/GALR/glry-img-4.webp);}
+.mrc-galr-elmt-5::before {background-image: url(../../IMAGE/GALR/glry-img-5.webp);}
+.mrc-galr-elmt-6::before {background-image: url(../../IMAGE/GALR/glry-img-6.webp);}
+
+/* normal ----------------------------------------------------------- normal */
+.global-elmt-pict::before {
+    position: absolute;
+    top: 0; left: 0;
+    content: '';
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.global-elmt-pict::after {
+    position: absolute;
+    top: clamp(10px, 3vw, 20px);
+    right: clamp(10px, 3vw, 25px);
+    content: '';
+
+    width: clamp(20px, 5vw, 30px);
+    aspect-ratio: 1;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../IMAGE/GALR/full.svg);
+    filter: drop-shadow(0px 2.5px 12.5px rgba(0, 0, 0, .5));
+
+    transition: .2s ease-in-out;
+}
+
+/* wide --------------------------------------------------------------- wide */
+.global-elmt-pict-wide::before {
+    position: absolute;
+    content: '';
+
+    top: 50%;
+    left: 50%;
+    transform:
+    translateY(-50%)
+    translateX(-50%);
+
+    width: 65%;
+    aspect-ratio: 2/1.25;
+
+    cursor: pointer;
+    border-radius: 5px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.global-elmt-pict-wide::after {
+    position: absolute;
+    top: clamp(20px, 3vw, 30px);
+    right: clamp(20px, 3vw, 35px);
+    content: '';
+
+    width: clamp(30px, 4vw, 40px);
+    aspect-ratio: 1;
+    
+    cursor: pointer;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../IMAGE/GALR/exit.svg);
+    filter: drop-shadow(0px 2.5px 12.5px rgba(0, 0, 0, .5));
+}
+
+/* animation ----------------------------------------------------- animation */
+.global-elmt-pict:hover {
+    scale: 1.015;
+}
+
+.global-elmt-pict:hover.global-elmt-pict::after {
+    top: clamp(4px, 3vw, 16px);
+    right: clamp(8px, 3vw, 20px);
+}

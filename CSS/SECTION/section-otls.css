@@ -1,0 +1,27 @@
+/*? OTLS ============================================================= OTLS ?*/
+/* structure ----------------------------------------------------- structure */
+#mrc-otls-content {
+    width: 100%;
+    height: auto;
+
+    gap: var(--gp-btwn-global);
+
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (width > 835px) {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width > 1100px) {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (width > 1550px) {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

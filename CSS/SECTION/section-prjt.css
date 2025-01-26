@@ -1,0 +1,27 @@
+/*? PRJT ============================================================= PRJT ?*/
+/* structure ----------------------------------------------------- structure */
+#mrc-prjt-content {
+    width: 100%;
+    height: auto;
+
+    gap: var(--gp-btwn-global);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.mrc-prjt-elmt::after {
+    position: absolute;
+    top: clamp(10px, 3vw, 15px);
+    right: clamp(10px, 3vw, 15px);
+    content: '';
+
+    width: clamp(20px, 5vw, 30px);
+    aspect-ratio: 1;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../IMAGE/link.svg);
+    filter: drop-shadow(0px 2.5px 12.5px rgba(0, 0, 0, .5));
+}

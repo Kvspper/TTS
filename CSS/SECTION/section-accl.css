@@ -1,0 +1,93 @@
+/*? ACCL ============================================================= ACCL ?*/
+/* structure ----------------------------------------------------- structure */
+#mrc-accl-content {
+    width: 100%;
+    height: auto;
+
+    gap: var(--gp-btwn-global);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media (width > 1100px) { align-items: start; }
+
+    @media (width > 800px) { flex-direction: row; }
+    @media (width > 1100px) { flex-direction: column; }
+    @media (width > 1500px) { flex-direction: row; }
+}
+
+.global-elmt-card:nth-child(1) {
+    background-color: var(--clr-primary);
+    box-shadow: 0px 2.5px 12.5px 0px var(--clr-primary-shdw);
+}
+
+.global-elmt-card:nth-child(2) {
+    background-color: var(--clr-scondry);
+    box-shadow: 0px 2.5px 12.5px 0px var(--clr-scondry-shdw);
+}
+
+.global-elmt-card::before {
+    position: absolute;
+    top: -75px; right: -100px;
+    content: '';
+
+    height: 200%;
+    aspect-ratio: 1;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.global-elmt-card::after {
+    position: absolute;
+    bottom: clamp(20px, 1.8vw, 25px);
+    left: clamp(20px, 1.8vw, 25px);
+    content: '';
+
+    width: 10%;
+    height: clamp(3px, .90vw, 5px);
+
+    border-radius: 10px;
+    background-color: var(--clr-txt-w);
+
+    transition: .2s ease-in-out;
+}
+
+.global-elmt-card:nth-child(1)::before {background-image: url(../../IMAGE/ACCL/accl-card-1-fill.svg);}
+.global-elmt-card:nth-child(2)::before {background-image: url(../../IMAGE/ACCL/accl-card-2-fill.svg);}
+
+/* text --------------------------------------------------------------- text */
+#mrc-accl-text {
+    max-width: 650px;
+    height: auto;
+
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 1px;
+
+    font-size: var(--fs-ph);
+    color: var(--clr-txt-g);
+
+    @media (width > 1100px) {
+        max-width: 750px;
+        text-align: start;
+    }
+}
+
+/* animation ----------------------------------------------------- animation */
+.global-elmt-card:hover.global-elmt-card {
+    @media (800px < width < 1100px) {
+        width: 75%;
+    }
+
+    @media (width > 1500px) {
+        width: 65%;
+    }
+}
+
+.global-elmt-card:hover.global-elmt-card::after {
+    width: 20%;
+}
